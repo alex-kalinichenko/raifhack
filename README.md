@@ -1,5 +1,7 @@
 # Хакатон RaifHack 2021
 
+**Сайт**: https://raifhack.ru
+
 **Результат**:152 место из 377 с скором 1.49469 / 1.39329 на паблике / привате.
 
 **Лучшее решение находится в ноутбуке `solution_09.ipynb`**.
@@ -30,11 +32,9 @@
 - выбросить строки с нанами
 - заполнить наны street ближайшими (соседями)
 
-## Интересные публичные решения:
+## Лучшие публичные решения:
 
-
-
-- Векторизованная метрика (ускорение):
+- Векторизированная метрика, которая считается в более чем 100 раз быстрее той, что через цикл сделана организаторами:
 ```python
 def deviation_metric_vec(y_true: np.array, y_pred: np.array) -> float:
     deviation = (y_pred - y_true) / np.maximum(1e-8, y_true)
@@ -53,6 +53,19 @@ def deviation_metric_vec(y_true: np.array, y_pred: np.array) -> float:
     
     return metr.mean()
 ```
+- Для LightAutoML решения, стоит использовать с правильно заданными лоссом и метрикой. То есть task = Task('reg', loss='mae', metric=deviation_metric_vec, greater_is_better=False) https://t.me/c/1489786809/6766
+
+### Ссылки на лучшие публичные решения
+#лучшеепубличноерешение или #special из чата http://t.me/joinchat/CAVGpBxTlV4qPjx0d8_IZg
+- https://github.com/BatyaZhizni/Raifhack-DS - https://t.me/c/1489786809/6806
+- https://github.com/AlexBot1974/predictor_real_estae - https://t.me/c/1489786809/6842
+- https://github.com/LevSV/RAIFHACK - https://t.me/c/1489786809/6905
+- https://github.com/traptrip/raifhack_public/tree/main - https://t.me/c/1489786809/6976
+- https://github.com/akillarionov/raifhack - 
+- https://github.com/maks-sh/raifhack_baseline
+- https://github.com/VovanMC/raifhack_2021_solution
+- https://github.com/RadmirZ/-dspyt.com-final-submission
+- https://github.com/Edgoo/hackathon
 
 #### Запуск бейзлайна
 `python train.py --train_data '../../data/2021_raifhack/data/train.csv' --model_path solution_03_model.pkl`
@@ -70,7 +83,6 @@ def deviation_metric_vec(y_true: np.array, y_pred: np.array) -> float:
   - Новый плавающий IP-адрес
 
 # Итоговый лидерборд
-
 
 
 | Место   | Команда                                                | Скор                   | Итоговый  скор         | Кол-во  загрузок |
