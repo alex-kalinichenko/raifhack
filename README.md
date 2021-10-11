@@ -28,11 +28,14 @@
 
 ## Что можно ещё было сделать 
 - Многие успешно пользовались [LightAutoML](https://github.com/sberbank-ai-lab/LightAutoML)
+- AutoWoe (пример использования тут: https://www.kaggle.com/alexryzhkov/lightautoml-interpretable-model-autowoe). При помощи этой либы можно не только получить интерпретируемую модель, но и а) автоматический отчет о разработке и б) автоматический sql запрос по модели для инференса :)
 - использовать метрику от организаторов в качестве лосса
 - Кроссвалидацию (хотя она никому не помогла)
 - объеденить высокоэтажные в одну или несколько категорий
 - выбросить строки с нанами
 - заполнить наны street ближайшими (соседями)
+- Логарифмирование. Изначально распределение переменной является лог-нормальным (очень похожим на него), а значит применение логарифма переводит распределение в сильно похожее на нормальное - модели сильно проще с ним работать. Происходит это из-за того, что правый массивный хвост «сжимается» логарифмом.
+- учить модельку на price_type=0 и ее предикты кидать в кусочек для price_type=1 и тест как фичу чтобы поверх учить модельку
 
 ## Лучшие публичные решения:
 
@@ -76,7 +79,7 @@ def deviation_metric_vec(y_true: np.array, y_pred: np.array) -> float:
 
 #### Использование облачного решения `Selectel` 
 - Как подключаться к Selectel https://www.youtube.com/watch?v=y4ecuhYMjzM
-- Как запустить удалённый Jupyter https://kb.selectel.ru/docs/selectel-cloud-platform/main-services/cloud-servers/data_science_virtual_machine/
+- Чтобы быстро запустить JupyterLab, введите в адресной строке браузера `http://ip_адрес_сервера`. Пароль по умолчанию: `ikieg2wahmohtahF`  https://kb.selectel.ru/docs/selectel-cloud-platform/main-services/cloud-servers/data_science_virtual_machine/
 - Самый быстрый регион 9-й в Питере.
 - Использовался сервер Ubuntu 18.04 LTS Machine Learning 64-bit
   - vCPU 4 ядра
