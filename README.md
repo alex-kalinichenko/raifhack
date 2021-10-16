@@ -8,6 +8,8 @@
 
 **Лучшее решение находится в ноутбуке `solution_09.ipynb`**.
 
+**Памятка хакера**: https://russianhackers.notion.site/Raifhack-DS-266336ee6b7640c691364a9bb49885dd
+
 ## Что было сделано
 **Увеличило скор**:
 
@@ -535,4 +537,3 @@ def deviation_metric_vec(y_true: np.array, y_pred: np.array) -> float:
 
 В репозитории есть своя реализация регуляризованного target encoding (SmoothedTargetEncoding). можно поэкспериментировать с ним
 
-**Памятка хакера**: https://russianhackers.notion.site/Raifhack-DS-266336ee6b7640c691364a9bb49885dd
